@@ -436,6 +436,7 @@ func NewControllerInitializers(loopMode ControllerLoopMode) map[string]InitFunc 
 		controllers[name] = fn
 	}
 
+	// 注册控制器
 	register("endpoint", startEndpointController)
 	register("endpointslice", startEndpointSliceController)
 	register("endpointslicemirroring", startEndpointSliceMirroringController)

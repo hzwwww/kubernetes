@@ -176,6 +176,7 @@ func (e *Controller) Run(ctx context.Context, workers int) {
 		return
 	}
 
+	// 启动多个worker
 	for i := 0; i < workers; i++ {
 		go wait.UntilWithContext(ctx, e.worker, e.workerLoopPeriod)
 	}
